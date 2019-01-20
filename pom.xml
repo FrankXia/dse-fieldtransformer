@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.esri.realtime.datastore</groupId>
+    <artifactId>datastore-dse</artifactId>
+    <version>0.10.16</version>
+    <relativePath>../pom.xml</relativePath>
+  </parent>
+
+  <artifactId>datastore-dse-field-transformer</artifactId>
+  <packaging>jar</packaging>
+
+  <properties>
+    <commons-lang3.version>3.2</commons-lang3.version>
+    <commons-logging.version>1.1.1</commons-logging.version>
+    <httpclient.version>4.5.1</httpclient.version>
+  </properties>
+
+  <dependencies>
+
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.9.8</version>
+    </dependency>
+
+    <!-- DSE dependencies -->
+    <!--
+    mvn install:install-file -Dfile=/Users/frank/datastax_enterprise/dse-6.7.0/lib/dse-search-6.7.0.jar -DgroupId=com.datastax -DartifactId=dse-search -Dversion=6.7.0 -Dpackaging=jar
+    mvn install:install-file -Dfile=/Users/frank/datastax_enterprise/dse-6.7.0/resources/solr/lib/solr-uber-with-auth_2.1-6.0.1.2.2356.jar -DgroupId=com.datastax -DartifactId=dse-solr -Dversion=6.7.0 -Dpackaging=jar
+    -->
+    <dependency>
+      <groupId>com.datastax</groupId>
+      <artifactId>dse-search</artifactId>
+      <version>6.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.datastax</groupId>
+      <artifactId>dse-solr</artifactId>
+      <version>6.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.datastax.dse</groupId>
+      <artifactId>dse-java-driver-core</artifactId>
+      <version>1.7.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.esri.arcgis.bds</groupId>
+      <artifactId>arcgis-bds-spark-core</artifactId>
+      <version>${bds.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.solr</groupId>
+      <artifactId>solr-solrj</artifactId>
+      <version>6.0.1</version>
+    </dependency>
+
+
+    <!--  Test Dependencies -->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.hamcrest</groupId>
+          <artifactId>hamcrest-core</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-slf4j-impl</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-1.2-api</artifactId>
+      <version>${log4j.version}</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <includes>
+            <include>**/*Test*.java</include>
+          </includes>
+          <argLine>
+            -Djava.security.manager -Djava.security.policy=src/test/resources/java.policy
+            -Dlog4j.configurationFile=src/test/resources/log4j2.properties
+            -Des.set.netty.runtime.available.processors=false -Dtests.security.manager=false
+          </argLine>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
