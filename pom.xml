@@ -3,12 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>com.esri.realtime.datastore</groupId>
-    <artifactId>datastore-dse</artifactId>
-    <version>0.10.16</version>
-  </parent>
-
+  <groupId>com.esri.realtime.datastore</groupId>
+  <version>0.10.16</version>
   <artifactId>datastore-dse-field-transformer</artifactId>
   <packaging>jar</packaging>
 
@@ -51,45 +47,9 @@
     </dependency>
 
     <dependency>
-      <groupId>com.esri.arcgis.bds</groupId>
-      <artifactId>arcgis-bds-spark-core</artifactId>
-      <version>${bds.version}</version>
-    </dependency>
-
-    <dependency>
       <groupId>org.apache.solr</groupId>
       <artifactId>solr-solrj</artifactId>
       <version>6.0.1</version>
-    </dependency>
-
-
-    <!--  Test Dependencies -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-      <exclusions>
-        <exclusion>
-          <groupId>org.hamcrest</groupId>
-          <artifactId>hamcrest-core</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-core</artifactId>
-      <version>${log4j.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-slf4j-impl</artifactId>
-      <version>${log4j.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.logging.log4j</groupId>
-      <artifactId>log4j-1.2-api</artifactId>
-      <version>${log4j.version}</version>
     </dependency>
 
   </dependencies>
