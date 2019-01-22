@@ -1,4 +1,4 @@
-package com.esri.bds.dse.tf.sample;
+package br.eribeiro.dse.search;
 
 public class City
 {

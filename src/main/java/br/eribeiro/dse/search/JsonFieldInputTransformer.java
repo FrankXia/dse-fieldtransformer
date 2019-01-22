@@ -1,4 +1,4 @@
-package com.esri.bds.dse.tf.sample;
+package br.eribeiro.dse.search;
 
 import com.datastax.bdp.search.solr.FieldInputTransformer;
 
