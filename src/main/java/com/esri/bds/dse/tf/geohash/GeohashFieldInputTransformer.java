@@ -38,11 +38,12 @@ public class GeohashFieldInputTransformer extends FieldInputTransformer
       String fieldName = fieldInfo.getName();
       String fieldNamePrfix = fieldName.substring(0, fieldName.lastIndexOf("_"));
       int length = fieldValue.length();
-      for (int index = 1; index < length - 1; index++) {
+      for (int index = 1; index < length; index++) {
         String subGeohash = fieldValue.substring(0, index);
         SchemaField subGeohashField = core.getLatestSchema().getFieldOrNull(fieldNamePrfix+"_" + index);
         helper.addFieldToDocument(core, core.getLatestSchema(), key, doc, subGeohashField, subGeohash);
       }
+      helper.addFieldToDocument(core, core.getLatestSchema(), key, doc, fieldInfo, fieldValue);
     }
     catch (Exception ex)
     {
