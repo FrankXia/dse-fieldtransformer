@@ -7,7 +7,6 @@
     <groupId>com.esri.realtime.datastore</groupId>
     <artifactId>datastore-dse</artifactId>
     <version>0.10.16</version>
-    <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>datastore-dse-field-transformer</artifactId>
