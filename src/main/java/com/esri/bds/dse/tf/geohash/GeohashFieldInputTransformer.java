@@ -38,9 +38,8 @@ public class GeohashFieldInputTransformer extends FieldInputTransformer
       String fieldName = fieldInfo.getName();
       String fieldNamePrfix = fieldName.substring(0, fieldName.lastIndexOf("_"));
       int length = fieldValue.length();
-      for (int index = 1; index < length; index++) {
+      for (int index = 1; index < length - 1; index++) {
         String subGeohash = fieldValue.substring(0, index);
-        //FIXME: where this sub-feild was created???
         SchemaField subGeohashField = core.getLatestSchema().getFieldOrNull(fieldNamePrfix+"_" + index);
         helper.addFieldToDocument(core, core.getLatestSchema(), key, doc, subGeohashField, subGeohash);
       }
