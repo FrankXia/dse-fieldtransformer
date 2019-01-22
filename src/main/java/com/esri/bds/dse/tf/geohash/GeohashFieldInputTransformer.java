@@ -17,7 +17,7 @@ public class GeohashFieldInputTransformer extends FieldInputTransformer
   @Override
   public boolean evaluate(String field)
   {
-    return field.equals("json");
+    return field.equals("esri_geohash_square_102100_30");
   }
 
   @Override
@@ -37,7 +37,7 @@ public class GeohashFieldInputTransformer extends FieldInputTransformer
 
       String fieldName = fieldInfo.getName();
       String fieldNamePrfix = fieldName.substring(0, fieldName.lastIndexOf("_"));
-      int length = fieldValue.length() - 1;
+      int length = fieldValue.length();
       for (int index = 1; index < length; index++) {
         String subGeohash = fieldValue.substring(0, index);
         //FIXME: where this sub-feild was created???
