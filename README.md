@@ -6,9 +6,11 @@ Field input transformer for substring indexing
 2. Update the table's Solr index schema and configuration with 2 XML files included in this project.
 
     In the samples folder, we have included 2 XML files for configuring a FAA table with components required for supporting the field input transformer. 
+    The two XML files can be dowloanded from Solr HTTP ending point at http://localhost:8983/solr/#/esri_ds_data.faa/files?file=solrconfig.xml and 
+    http://localhost:8983/solr/#/esri_ds_data.faa/files?file=schema.xml  
 
     In the solrconfig.xml file, a new entry of "fieldInputTransformer" is added that points to the field input transformer class. We can update
-the solr configuraiton with following command/request, 
+the solr configuration with following command/request, 
 
     `curl http://dse1:8983/solr/resource/esri_ds_data.faa/solrconfig.xml --data-binary @solrconfig.xml -H 'Content-type:text/xml; charset=utf-8'`
 
