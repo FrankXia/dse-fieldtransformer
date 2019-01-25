@@ -40,5 +40,5 @@ you need to install the `git` and `maven` programs if you haven't done it yet)
 
 4. Follow the instructions from Spark testing program at https://github.com/david618/sparktest to load the simulated FAA flight data with a command similar to this one
 
-    java -cp target/sparktest.jar org.jennings.estest.SendKafkaTopicCassandraPlanesHashGlobalObjectIds local[8] 1000 a4:9092 faa faa 1 dse1 1 false true true false esri_ds_data faa
+    `java -cp target/sparktest.jar org.jennings.estest.SendKafkaTopicCassandraPlanesHashGlobalObjectIds local[8] 1000 a4:9092 faa faa 1 dse1 1 false true true false esri_ds_data faa`
 
