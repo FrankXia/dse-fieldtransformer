@@ -23,11 +23,13 @@ you need to install the `git` and `maven` programs if you haven't done it yet)
     - install required libs to the local maven repo
     
     `mvn install:install-file -Dfile=/usr/share/dse/dse-search-6.7.0.jar -DgroupId=com.datastax -DartifactId=dse-search -Dversion=6.7.0 -Dpackaging=jar`
+    
     `mvn install:install-file -Dfile=/usr/share/dse/solr/lib/solr-uber-with-auth_2.1-6.0.1.2.2356.jar -DgroupId=com.datastax -DartifactId=dse-solr -Dversion=6.7.0 -Dpackaging=jar`
 
     - download the project and build it
 
     `git clone https://github.com/FrankXia/dse-fieldtransformer.git`
+    
     `mvn clean instal`
  
     - copy the jar file to the Solr lib folder 
