@@ -17,7 +17,8 @@ public class GeohashFieldInputTransformer extends FieldInputTransformer
   @Override
   public boolean evaluate(String field)
   {
-    return field.equals("esri_geohash_square_102100_30");
+    // The geohash field names must have the following prefix
+    return field.startsWith("esri_geohash_");
   }
 
   @Override
@@ -32,15 +33,14 @@ public class GeohashFieldInputTransformer extends FieldInputTransformer
   {
     try
     {
-      LOGGER.info("GeohashFieldInputTransformer called");
-      LOGGER.info("fieldValue: " + fieldValue);
+      LOGGER.info("GeohashFieldInputTransformer called. fieldValue: "+ fieldValue);
 
       String fieldName = fieldInfo.getName();
-      String fieldNamePrfix = fieldName.substring(0, fieldName.lastIndexOf("_"));
+      String fieldNamePrefix = fieldName.substring(0, fieldName.lastIndexOf("_"));
       int length = fieldValue.length();
       for (int index = 1; index < length; index++) {
         String subGeohash = fieldValue.substring(0, index);
-        SchemaField subGeohashField = core.getLatestSchema().getFieldOrNull(fieldNamePrfix+"_" + index);
+        SchemaField subGeohashField = core.getLatestSchema().getFieldOrNull(fieldNamePrefix + "_" + index);
         helper.addFieldToDocument(core, core.getLatestSchema(), key, doc, subGeohashField, subGeohash);
       }
       helper.addFieldToDocument(core, core.getLatestSchema(), key, doc, fieldInfo, fieldValue);
