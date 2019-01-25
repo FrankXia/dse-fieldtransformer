@@ -10,12 +10,12 @@ Field input transformer for substring indexing
     In the solrconfig.xml file, a new entry of "fieldInputTransformer" is added that points to the field input transformer class. We can update
 the solr configuraiton with following command/request, 
 
-    `curl http://localhost:8983/solr/resource/esri_ds_data.faa/solrconfig.xml --data-binary @solrconfig.xml -H 'Content-type:text/xml; charset=utf-8'`
+    `curl http://dse1:8983/solr/resource/esri_ds_data.faa/solrconfig.xml --data-binary @solrconfig.xml -H 'Content-type:text/xml; charset=utf-8'`
 
     In the schema.xml file, all substring fields are added with docValues set to true since we will need each sub-field for terms faceting. We can update
 the solr index schema with following command/request,  
 
-    `curl http://localhost:8983/solr/resource/esri_ds_data.faa/schema.xml --data-binary @schema.xml -H 'Content-type:text/xml; charset=utf-8'`
+    `curl http://dse1:8983/solr/resource/esri_ds_data.faa/schema.xml --data-binary @schema.xml -H 'Content-type:text/xml; charset=utf-8'`
 
 3. To manually install the transformer for each DSE node. SSH into each node and then issue following commands (
 you need to install the `git` and `maven` programs if you haven't done it yet)

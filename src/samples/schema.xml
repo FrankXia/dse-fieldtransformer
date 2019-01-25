@@ -41,7 +41,7 @@
     <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_square_102100_29" type="StrField" stored="false"/>
     <field docValues="true" indexed="true" multiValued="false" name="ts" type="TrieDateField"/>
     <field docValues="true" indexed="true" multiValued="false" name="speed" type="TrieDoubleField"/>
-    <field docValues="true" indexed="true" multiValued="false" name="plane_id" type="TrieLongField"/>
+    <field docValues="true" indexed="true" multiValued="false" name="plane_id" type="TrieIntField"/>
     <field docValues="true" indexed="true" multiValued="false" name="lon" type="TrieDoubleField"/>
     <field docValues="true" indexed="true" multiValued="false" name="secstodep" type="TrieIntField"/>
     <field docValues="true" indexed="true" multiValued="false" name="timestmp" type="TrieDateField"/>
