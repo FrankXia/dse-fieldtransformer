@@ -47,17 +47,17 @@
     <field docValues="true" indexed="true" multiValued="false" name="timestmp" type="TrieDateField"/>
     <field docValues="true" indexed="true" multiValued="false" name="bearing" type="TrieDoubleField"/>
     <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_12" type="StrField"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_1" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_2" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_3" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_4" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_5" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_6" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_7" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_8" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_9" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_10" type="StrField" stored="false"/>
-    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_102100_11" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_1" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_2" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_3" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_4" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_5" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_6" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_7" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_8" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_9" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_10" type="StrField" stored="false"/>
+    <field docValues="true" indexed="true" multiValued="false" name="esri_geohash_geohash_4326_11" type="StrField" stored="false"/>
     <field docValues="true" indexed="true" multiValued="false" name="rtid" type="TrieIntField"/>
     <field docValues="true" indexed="true" multiValued="false" name="objectid" type="TrieLongField"/>
     <field indexed="true" multiValued="false" name="dest" type="StrField"/>
